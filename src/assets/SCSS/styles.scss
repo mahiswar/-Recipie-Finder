@@ -1,0 +1,677 @@
+// Font family
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&display=swap");
+
+// Import Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+$font-color: rgb(67, 172, 217);
+$orange-color: #ffc371;
+$dark-blue: #111d28;
+$cream-color: #fffbd5;
+$light-blue: #3a6186;
+$Pink: #ff5f6d;
+$Faded-Pink: #ff5f6ccc;
+$Faded-Orange: #ffc471cc;
+$dark-red: #89253e;
+$light-green: #78e08f;
+
+// Font sizes
+$h1-font-size: 2.4rem;
+$h2-font-size: 1.8rem;
+$h3-font-size: 1.6rem;
+$parragraph-font-size: 1.4rem;
+$footer-font-size: 0.8rem;
+$btn-font-size: 1.4rem;
+
+// Font weights
+$h1-weight: 700;
+$h2-weight: 400;
+$h3-weight: 400;
+$parragraph-weight: 300;
+$btn-weight: 200;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/**********************************
+    1. Landing Page
+**********************************/
+
+.landing-page-body {
+    background-image: linear-gradient(45deg, $Pink, $orange-color);
+    background-size: 400% 400%;
+    height: 100vh;
+    animation: gradient 15s ease infinite;
+    position: fixed;
+    overflow: hidden;
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.main-content {
+    height: 100vh;
+    gap: 0.5rem;
+    width: 35rem;
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+.landing-logotipo {
+    width: 50%;
+    height: auto;
+}
+
+.landing-isotipo {
+    width: 25% !important;
+    width: auto;
+}
+
+.search-bar-container {
+    width: 100%;
+    height: auto;
+}
+
+.search-bar {
+    background-color: $dark-blue;
+    border: 3px solid $orange-color;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 75px;
+    width: 100%;
+    text-align: center;
+
+    &:focus {
+        border: none;
+        background-color: $dark-blue;
+        color: white;
+    }
+    &:hover {
+        &::placeholder {
+            color: $Pink;
+        }
+    }
+    &:active,
+    &:focus {
+        &::placeholder {
+            color: transparent;
+        }
+    }
+}
+
+.search-icon {
+    stroke: white;
+}
+
+.btn-search {
+    background-color: $dark-blue;
+    border: 3px solid $orange-color;
+    border-radius: 100%;
+    padding: 0.8rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    font-size: medium;
+
+    &:hover {
+        background-color: $Pink;
+        border: 3px solid $orange-color;
+    }
+}
+
+.btn-random {
+    background-color: $Pink;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border: 2px solid $orange-color;
+    border-radius: 75px;
+    font-weight: $h1-weight;
+    font-size: $btn-font-size;
+    letter-spacing: 1px;
+    color: white;
+    width: 50%;
+    height: auto;
+    padding: 1.2rem 0;
+    &:active,
+    &:link,
+    &:focus {
+        background-color: $Pink;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        border: 2px solid $orange-color;
+        color: white;
+    }
+    &:hover {
+        color: white;
+        background-color: $Pink;
+        border: solid 2px $cream-color;
+        box-shadow: 0 8px 2px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.landing-footer {
+    width: 65%;
+    position: fixed;
+    bottom: 2rem;
+}
+
+.footer-text {
+    font-size: $footer-font-size;
+}
+
+.footer-column {
+    width: 20%;
+    gap: 1.4rem;
+}
+
+.footer-left {
+    flex-basis: auto;
+}
+
+.footer-center {
+    flex-grow: 0;
+}
+
+.footer-column-right {
+    width: 20%;
+    flex-grow: 0;
+}
+
+.footer-column-right-text {
+    margin: 0;
+}
+
+.bedu-logo {
+    width: 8%;
+    height: auto;
+}
+
+/**********************************
+    FINAL DE LANDING PAGE
+**********************************/
+
+/**********************************
+    2. Recipies Page
+**********************************/
+.recipies {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    #results {
+        margin-top: 2rem;
+        font-weight: lighter;
+        color: $light-blue;
+        font-size: 1.2rem;
+    }
+    #search {
+        margin-bottom: 3rem;
+        margin-top: 1rem;
+        font-weight: lighter;
+        color: $light-blue;
+        font-size: 1.2rem;
+    }
+    strong {
+        color: #000;
+        font-weight: lighter;
+    }
+    .recipieContainer {
+        display: grid;
+        grid-template-columns: repeat(3, 0.8fr);
+        gap: 2rem;
+        .recipie {
+            border: 3px solid $Pink;
+            border-radius: 1rem;
+            background-color: #fff;
+            text-align: left;
+            box-shadow: 2px 5px 14px -5px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: 2px 5px 14px -5px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 2px 5px 14px -5px rgba(0, 0, 0, 0.75);
+            img {
+                border-radius: 1rem 1rem 0 0;
+                width: 100%;
+            }
+            h3 {
+                color: $dark-red;
+                text-align: left;
+                padding: 0.3rem 2rem;
+                font-weight: normal;
+                font-size: 1.4rem;
+            }
+            p {
+                padding: 0.3rem 2rem;
+                color: #808080;
+                margin-top: 0.2rem;
+                margin-bottom: 0;
+            }
+            .cat1 {
+                background-color: $Pink;
+                color: #fff;
+                border-radius: 1rem;
+                padding: 0.05rem 1rem;
+                margin: 0.3rem 0.5rem 0.3rem 2rem;
+                font-size: 0.8rem;
+            }
+            .cat2 {
+                background-color: $dark-blue;
+                color: #fff;
+                border-radius: 1rem;
+                padding: 0.05rem 1rem;
+                font-size: 0.8rem;
+            }
+            .cat3 {
+                background-color: $light-green;
+                color: #fff;
+                border-radius: 1rem;
+                padding: 0.05rem 1rem;
+                font-size: 0.8rem;
+            }
+            .cat4 {
+                background-color: $orange-color;
+                color: #fff;
+                border-radius: 1rem;
+                padding: 0.05rem 1rem;
+                font-size: 0.8rem;
+            }
+            .contenedor {
+                margin-top: 0;
+                display: flex;
+                justify-content: flex-end;
+                position: relative;
+                left: 1rem;
+                top: 1rem;
+            }
+            .contenedorBoton {
+                display: flex;
+                justify-content: center;
+                background: linear-gradient(0, $Pink, $orange-color);
+                width: 50px;
+                height: 50px;
+                padding: 0.3rem 1.5rem;
+                border-radius: 50%;
+            }
+            a {
+                display: block;
+                color: #fff;
+                font-size: 1.7rem;
+                text-decoration: none;
+            }
+        }
+    }
+}
+.contenedor {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+.contenedorBoton {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(0, $orange-color, $Pink);
+    width: 50px;
+    height: 50px;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50%;
+}
+a {
+    display: block;
+    color: #fff;
+    font-size: 1.7rem;
+    text-decoration: none;
+}
+.backToTop {
+    display: block;
+    margin: 0.8rem auto 3rem auto;
+    color: $Pink;
+    font-size: 1.2rem;
+}
+
+/**********************************
+    FINAL DE RECIPIES PAGE
+**********************************/
+
+// MEDIA QUERIES PARA TELEFONOS
+@media (min-width: 250px) and (max-width: 768px) {
+    /**********************************
+        MEDIA QUERIES - TELEFONO - LANDING PAGE
+    **********************************/
+
+    .main-content {
+        width: 100%;
+        height: 100%;
+    }
+
+    .search-bar-container {
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search-icon {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-search {
+        width: 4.4rem;
+        height: 4.4rem;
+        font-size: medium;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .btn-random {
+        font-size: 0.8rem;
+        padding: 1rem;
+        width: 45%;
+    }
+
+    .footer {
+        // flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.4rem;
+    }
+
+    .footer-text {
+        font-size: 0.6rem;
+        text-align: center;
+    }
+
+    .bedu-logo {
+        width: 2.4rem;
+        height: auto;
+    }
+
+    .landing-isotipo {
+        width: 25% !important;
+        height: auto;
+    }
+    .landing-logotipo {
+        width: 35%;
+        height: auto;
+    }
+    .landing-page-body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+    }
+    .btn-header {
+        font-size: 1.2rem;
+    }
+    .main-title {
+        font-size: 1.8rem;
+    }
+    .click-counter {
+        font-size: 1.8rem;
+    }
+
+    .click-button {
+        width: 200px;
+    }
+
+    .footer-left {
+        // flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // visibility: hidden;
+    }
+
+    .footer-column-right {
+        flex-direction: row;
+    }
+
+    /**********************************
+    FINAL DE MEDIA QUERIES - TELEFONO - LANDING PAGE
+    **********************************/
+
+    //AGREGAR MEDIA QUERIES DE RECIPIES Y BUSCADOR
+
+    /**********************************
+    MEDIA QUERIES - TELEFONO - RECIPIES PAGE
+    **********************************/
+
+    .recipies {
+        width: 80%;
+        .recipieContainer {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 2rem;
+        }
+    }
+}
+
+// MEDIA QUERIES PARA TABLETAS - IPAD PRO
+@media only screen and (min-device-width: 834px) and (max-device-width: 834px) {
+    /**********************************
+        MEDIA QUERIES - TABLETA - LANDING PAGE
+    **********************************/
+    .landing-isotipo {
+        width: 15% !important;
+        height: auto;
+    }
+
+    .landing-logotipo {
+        width: 25%;
+        height: auto;
+    }
+
+    .landing-page-body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-content {
+        width: 100%;
+        height: 100%;
+    }
+
+    .search-bar-container {
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search-icon {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search-bar {
+        width: 50%;
+    }
+
+    .btn-search {
+        padding: 1.2rem;
+        margin: 0;
+        font-size: medium;
+    }
+
+    .btn-random {
+        width: 25%;
+        padding: 0.4rem 0;
+        font-size: 1.2rem;
+    }
+
+    .footer-text {
+        font-size: 0.5rem;
+    }
+
+    /**********************************
+    FINAL DE MEDIA QUERIES - TABLETA - LANDING PAGE
+    **********************************/
+
+    //AGREGAR MEDIA QUERIES DE RECIPIES Y BUSCADOR
+}
+
+// add media queries for medium screens
+@media (min-width: 768px) and (max-width: 1200px) {
+    .bedu-logo {
+        width: 4.2rem;
+        height: auto;
+    }
+
+    .landing-footer {
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 2.4rem;
+        width: 95%;
+    }
+
+    .footer-left {
+        flex-grow: 1;
+    }
+
+    .footer-center {
+        flex-grow: 2;
+    }
+
+    .footer-right {
+        flex-grow: 1;
+    }
+    .first-section {
+        width: 100%;
+    }
+    .btn-header {
+        font-size: 1.2rem;
+    }
+    .main-title {
+        font-size: 1.8rem;
+    }
+    .click-counter {
+        font-size: 1.8rem;
+    }
+    .click-button {
+        width: 200px;
+    }
+    .click-buttons-container {
+        gap: 0.5rem;
+    }
+    .hero-icon {
+        width: 100px;
+        height: 100px;
+    }
+    /**********************************
+    MEDIA QUERIES - TABLETA - RECIPIES PAGE
+    **********************************/
+    .recipies {
+        width: 80%;
+        .recipieContainer {
+            display: grid;
+            grid-template-columns: repeat(2, .8fr);
+            gap: 2rem;
+        }
+    }
+}
+
+/* Styles for recipie-detail-page */
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    height: 100vh;
+    margin: 20px auto;
+}
+.categories-container {
+    display: block;
+    margin-top: 30px;
+}
+.categories-list {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+.categories-container h3 {
+    display: block;
+    text-align: center;
+    font-weight: lighter;
+    color: $orange-color;
+}
+.categories-container .categories-list .category {
+    background-color: $dark-red;
+    max-width: 150px;
+    color: #fff;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+.categories-container .categories-list .area {
+    background-color: $light-green;
+    max-width: 150px;
+    color: #fff;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.img-container {
+    max-width: 500px;
+    max-height: 500px;
+    object-fit: cover;
+    border: 3px solid $Pink;
+    border-radius: 1rem;
+}
+.img-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+//El aside derecho
+.right-aside {
+    max-width: 500px;
+    max-height: 500px;
+    padding: 0 20px 0 30px;
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 25%;
+}
+.single-recipie-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.single-recipie-container h1 {
+    color: $Pink;
+    margin-top: 20px;
+    text-align: left;
+    font-weight: 400;
+    padding: 0 10px 0 0;
+}
+.single-recipie-info h4 {
+    color: $Pink;
+    font-weight: lighter;
+    padding: 10px 20px 0 10px;
+}
+.single-recipie-info ul li {
+    max-width: 500px;
+    max-height: 100px;
+    color: $light-blue;
+    list-style: none;
+    padding: 0 10px 0 0;
+}
+.recipie-instructions {
+    min-width: 400px;
+    max-height: 500px;
+    padding: 0 20px 0 10px;
+    color: $light-blue;
+    font-weight: lighter;
+    text-align: justify;
+}
